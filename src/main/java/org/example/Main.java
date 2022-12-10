@@ -560,6 +560,10 @@ public class Main {
                         {
                             vk.messages().send(actor).message("Введите номер группы, чтобы получить расписание; введите замены, чтобы получить замены").userId(message.getFromId()).randomId(rand.nextInt(1000000)).execute();
                         }
+                        else
+                        {
+                            vk.messages().send(actor).message("Команда не распознана, проверьте правильность введенной команды").userId(message.getFromId()).randomId(rand.nextInt(1000000)).execute();
+                        }
                     } catch (ApiException | ClientException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
